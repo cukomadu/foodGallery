@@ -1,21 +1,22 @@
+
 import React from 'react'
 import ACTIONS from '../actions'
 import Header from './header'
 
 const LoginView = React.createClass({
-	render: function() {
-		return (
-			<div className="loginView">
-				<Header />
-				<RegisterBox />
-				<LoginBox />
-			</div>
-			)
-	}
+
+    render: function() {
+        return (
+            <div className="loginView">
+                <Header />
+                <RegisterBox />
+                <LoginBox />
+            </div>
+            )
+    }
 })
 
 const RegisterBox = React.createClass({
-
 	_handleRegister: function(evt) {
 		evt.preventDefault()
 		ACTIONS.registerUser({
@@ -60,5 +61,7 @@ const LoginBox = React.createClass({
 			</div>
 			)
 	}
+   
 })
+
 export default LoginView

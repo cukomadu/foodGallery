@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import ACTIONS from '../actions'
 
@@ -25,6 +27,9 @@ const NavBar = React.createClass({
 			</div>
 			)
 	}
+    
 })
+
+
 
 export default Header
