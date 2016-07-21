@@ -27,7 +27,7 @@ const DishPostingForm = React.createClass({
 			rating: e.currentTarget.rating.value,
 			authorId: User.getCurrentUser()._id,
 			authorEmail: User.getCurrentUser().email,
-			imageUrl: this.url ? this.url: '../assets/images/empty-plate.jpg'
+			imageUrl: this.url ? this.url: '/images/moi.png'
 		})
 	},
 

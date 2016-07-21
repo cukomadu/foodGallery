@@ -2,6 +2,10 @@
 //STEP 6 (CREATE ACTIONS MODULE)
 
 import {User, DishModel} from './models/models'
+import DISH_STORE from './store'
+import toastr from 'toastr'
+
+console.log(toastr)
 
 const ACTIONS = {
 
@@ -20,12 +24,12 @@ const ACTIONS = {
     logUserIn: function(email, password) {
         User.login(email, password).then(
             (responseData) => {
-                alert(`user ${email} logged in!`)
+                toastr.success(`user ${email} logged in!`)
                 console.log(responseData)
                 location.hash = 'home' //want the page to re-route to the home page after successfull login
             },
             (error) => {
-                alert('FAILURE LOGGING IN')
+                toastr.error('FAILURE LOGGING IN')
                 console.log(error)
             }
         )
@@ -50,6 +54,10 @@ const ACTIONS = {
                 console.log(error)
             }
         )
+    },
+
+    fetchDishes: function(){
+        DISH_STORE.data.collection.fetch()
     }
 }
 
