@@ -1,7 +1,7 @@
 
 //STEP 6 (CREATE ACTIONS MODULE)
 
-import {User} from './models/models'
+import {User, DishModel} from './models/models'
 
 const ACTIONS = {
 
@@ -34,6 +34,21 @@ const ACTIONS = {
     logUserOut: function() { // we want the page to reroute to the login page after a user has logged out (server keeps track os user being logged in with a 'session')
         User.logout().then(
             () => location.hash = 'login'
+        )
+    },
+
+    saveDish: function(dishObj){
+        var dish = new DishModel(dishObj)
+        dish.save().then(
+            (responseData) => {
+                alert('Thanks for submitting!')
+                location.hash = 'home'
+                console.log(responseData)
+            },
+            (error) => {
+                alert('FAILURE')
+                console.log(error)
+            }
         )
     }
 }

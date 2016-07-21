@@ -17,24 +17,7 @@ const usersSchema = new Schema({
 
 })
 
-<<<<<<< HEAD
-const dishSchema = new Schema({
-	description: {type: String, required: true},
-	rating: {type: Number, required: true},
-	likes: {type: Number, dafault: 0},
-	location: {type: String, required: true},
-	title: {type: String, required: true},
-	authorEmail: {type: String, required: true},
-	imageUrl: {type: String, required: true},
-	tags: {type: [String], default: []},
-	authorId: {type: String, required: true}
-})
 
-
-module.exports = {
-  User: createModel('User', usersSchema),
-  Dish: createModel('Dish', dishSchema)
-=======
 //STEP ONE
 const dishSchema = new Schema ({ // establish the properties that we will use for the data
     description: {type: String, required: true}, //some are required to fill out and others have defaults set
@@ -51,5 +34,4 @@ const dishSchema = new Schema ({ // establish the properties that we will use fo
 module.exports = {
   User: createModel('User', usersSchema),
   Dish: createModel('Dish', dishSchema) //STEP TWO (export model)
->>>>>>> 88d53098887d8a832e5625c0521bb81775f27588
 }
