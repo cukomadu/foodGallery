@@ -33,7 +33,8 @@ const DishPostingForm = React.createClass({
 			rating: this.state.currentDishRating,
 			authorId: User.getCurrentUser()._id,
 			authorEmail: User.getCurrentUser().email,
-			imageUrl: this.url ? this.url: '/images/moi.png'
+			imageUrl: this.url ? this.url: '/images/img-not-found.png',
+			tags: e.currentTarget.tags.value.split(",")
 		})
 	},
 
@@ -50,7 +51,7 @@ const DishPostingForm = React.createClass({
 
 	_generateStarsJSX: function(ratingVal){
 		var JSXStars = []
-		for(var i = 1; i <= ratingVal; i++){
+		for(var i = 1; i <= 5; i++){
 			let starStyle = {fontSize: 30}
 			
 			if(i <= ratingVal){

@@ -15,7 +15,6 @@ const DISH_STORE = _.extend(Backbone.Events, {
 	getData: function(){ // getdata is used to set state for our collection. we will use it to get initial state
 		//and set state// this return becomes the state
 		return _.clone(this.data) // .clone is an underscore method
-
 	},
 
 	_initialize: function(){
