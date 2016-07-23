@@ -17,11 +17,10 @@ const usersSchema = new Schema({
 
 })
 
-
 //STEP ONE
 const dishSchema = new Schema ({ // establish the properties that we will use for the data
     description: {type: String, required: true}, //some are required to fill out and others have defaults set
-    rating: {type: Number, required: true},
+    rating: {type: Number, min:1, max:5, default: 0},
     likes: {type: Number, default: 0},
     location: {type: String, required: true},
     title: {type: String, required: true},

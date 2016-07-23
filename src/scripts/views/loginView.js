@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ACTIONS from '../actions'
 import Header from './header'
@@ -25,7 +24,6 @@ const RegisterBox = React.createClass({
 			name: evt.currentTarget.userName.value
 		})
 		evt.currentTarget.reset()
-
 	},
 
 	render: function() {
@@ -33,10 +31,10 @@ const RegisterBox = React.createClass({
 			<div className="loginBox register">
 				<form onSubmit={this._handleRegister} >
 					<h3>Register</h3>
-					<input type="text" name="userName" placeholder="Please Enter Your Name" />
-					<input type="email" name="email" placeholder="enter your email" />
-					<input type="password" name="password" placeholder="enter a password" />
-					<button type="submit">sign up!</button>
+					<input type="text" name="userName" placeholder="Enter Your Name" />
+					<input type="email" name="email" placeholder="Enter Your Email" />
+					<input type="password" name="password" placeholder="Enter Password" />
+					<button type="submit">Sign Up!</button>
 				</form>
 			</div>
 			)
@@ -47,6 +45,7 @@ const LoginBox = React.createClass({
 	_handleLogin: function(evt) {
 		evt.preventDefault()
 		ACTIONS.logUserIn(evt.target.email.value,evt.target.password.value)
+		evt.currentTarget.reset()
 	},
 
 	render: function() {
@@ -54,14 +53,13 @@ const LoginBox = React.createClass({
 			<div className="loginBox login">
 				<form onSubmit={this._handleLogin} >
 					<h3>Log in</h3>
-					<input type="email" name="email" placeholder="enter your email" />
-					<input type="password" name="password" placeholder="enter a password" />
-					<button type="submit">log in!</button>
+					<input type="email" name="email" placeholder="Enter Your Email" />
+					<input type="password" name="password" placeholder="Enter Password" />
+					<button type="submit">Log In!</button>
 				</form>
 			</div>
 			)
-	}
-   
+	}   
 })
 
 export default LoginView

@@ -4,13 +4,13 @@ let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
 
-
+let Dish = require('../db/schema.js').Dish //STEP THREE (import schema)
 
 //////////////////////////////////////////////////////////////////
 //USERS  
 /////////////////////////////////////////////////////////////////
 
-let Dish = require('../db/schema.js').Dish //STEP THREE (import schema)
+
 
   apiRouter
     .get('/users', function(req, res){
@@ -47,7 +47,8 @@ let Dish = require('../db/schema.js').Dish //STEP THREE (import schema)
       })
     })
 
-    // Routes for a Model(resource) should have this structure
+
+	// Routes for a Model(resource) should have this structure
 
 //STEP FOUR (build your server side apiroutes)
 
